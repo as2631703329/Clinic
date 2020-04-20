@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.his.masterdata.mapper.HosUserMapper">
 
-</beans>
+    <resultMap id="userListMap" type="cn.bdqn.his.masterdata.entity.User">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="sex" column="sex"></result>
+        <result property="phone" column="phone"></result>
+        <result property="email" column="email"></result>
+        <result property="id_card" column="idCard"></result>
+        <result property="address" column="address"></result>
+        <result property="add_details" column="addDetails"></result>
+        <result property="number" column="number"></result>
+    </resultMap>
+
+    <select id="userList" resultMap="userListMap">
+        SELECT * FROM `hos_user` hu
+        <where>
+            <if test="name != null and name != ''">and name like concat('%',#{name},'%')</if>
+        </where>
+    </select>
+
+    <select id="roleList" resultType="cn.bdqn.his.masterdata.entity.Role">
+        SELECT * FROM `hos_role`
+        <where>
+            <if test="id != null and id != ''">
+                and id = {id}
+            </if>
+        </where>
+    </select>
+</mapper>

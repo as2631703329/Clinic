@@ -1,6 +1,6 @@
-package cn.jinzhu.cli.medicine.entity.hos;
+package cn.bdqn.his.medicine.entity;
 
-import cn.jinzhu.cli.masterdata.entity.hos.User;
+import cn.bdqn.his.masterdata.entity.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

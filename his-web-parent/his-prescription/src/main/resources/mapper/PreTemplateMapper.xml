@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.jinzhu.cli.prescription.mapper.hos.PreTemplateMapper">
-   <resultMap id="getAllPreTemplates" type="cn.jinzhu.cli.prescription.entity.hos.PreTemplate">
+<mapper namespace="cn.bdqn.his.prescription.mapper.PreTemplateMapper">
+   <resultMap id="getAllPreTemplates" type="cn.bdqn.his.prescription.entity.hos.PreTemplate">
        <id  property="id" column="id"></id>
        <result property="diagnosis" column="diagnosis"></result>
        <result property="tempName" column="tempName"></result>
@@ -9,13 +9,13 @@
        <result property="createDate" column="createDate"></result>
        <result property="number" column="number"></result>
        <result property="suoming" column="suoming"></result>
-       <association property="prescriType" javaType="cn.jinzhu.cli.prescription.entity.hos.PrescriType">
+       <association property="prescriType" javaType="cn.bdqn.his.prescription.entity.hos.PrescriType">
            <result property="typeName" column="typeName"></result>
        </association>
-       <collection property="menWesterns" ofType="cn.jinzhu.cli.prescription.entity.med.MenWestern" javaType="java.util.List" resultMap="getMenWestern"> </collection>
-       <collection property="menEasts" ofType="cn.jinzhu.cli.prescription.entity.med.MenEast" javaType="java.util.List" resultMap="getMenEast"> </collection>
+       <collection property="menWesterns" ofType="cn.bdqn.his.prescription.entity.med.MenWestern" javaType="java.util.List" resultMap="getMenWestern"> </collection>
+       <collection property="menEasts" ofType="cn.bdqn.his.prescription.entity.med.MenEast" javaType="java.util.List" resultMap="getMenEast"> </collection>
    </resultMap>
-    <resultMap id="getMenWestern" type="cn.jinzhu.cli.prescription.entity.med.MenWestern">
+    <resultMap id="getMenWestern" type="cn.bdqn.his.prescription.entity.med.MenWestern">
 
             <id  property="id" column="meId"></id>
             <result property="singleUsage" column="single_usage"></result>
@@ -28,7 +28,7 @@
             <result property="druName" column="druName"></result>
 
     </resultMap>
-    <resultMap id="getMenEast" type="cn.jinzhu.cli.prescription.entity.med.MenEast">
+    <resultMap id="getMenEast" type="cn.bdqn.his.prescription.entity.med.MenEast">
 
         <id  property="id" column="meId"></id>
         <result property="singleUsage" column="single_usage"></result>

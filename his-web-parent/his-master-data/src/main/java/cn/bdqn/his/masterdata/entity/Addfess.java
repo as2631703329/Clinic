@@ -1,4 +1,4 @@
-package cn.jinzhu.cli.masterdata.entity.hos;
+package cn.bdqn.his.masterdata.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

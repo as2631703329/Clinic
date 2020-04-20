@@ -1,12 +1,12 @@
-package cn.jinzhu.cli.prescription.entity.newl;
+package cn.bdqn.his.prescription.entity.newl;
 
 
-import cn.jinzhu.cli.masterdata.entity.hos.Advice;
-import cn.jinzhu.cli.masterdata.entity.hos.DiagInfo;
-import cn.jinzhu.cli.prescription.entity.hos.PatienInfo;
-import cn.jinzhu.cli.prescription.entity.med.MenCheck;
-import cn.jinzhu.cli.prescription.entity.med.MenEast;
-import cn.jinzhu.cli.prescription.entity.med.MenWestern;
+import cn.bdqn.his.masterdata.entity.Advice;
+import cn.bdqn.his.masterdata.entity.DiagInfo;
+import cn.bdqn.his.prescription.entity.hos.PatienInfo;
+import cn.bdqn.his.prescription.entity.med.MenCheck;
+import cn.bdqn.his.prescription.entity.med.MenEast;
+import cn.bdqn.his.prescription.entity.med.MenWestern;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

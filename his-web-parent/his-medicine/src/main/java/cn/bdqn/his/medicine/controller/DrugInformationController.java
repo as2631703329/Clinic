@@ -1,12 +1,10 @@
-package cn.jinzhu.cli.medicine.controller.hos;
+package cn.bdqn.his.medicine.controller;
 
-import cn.jinzhu.cli.common.response.Response;
-import cn.jinzhu.cli.common.response.ResponseEnum;
-import cn.jinzhu.cli.medicine.entity.hos.DrugCate;
-import cn.jinzhu.cli.medicine.entity.hos.DrugInformation;
-import cn.jinzhu.cli.medicine.entity.hos.PrescriType;
-import cn.jinzhu.cli.medicine.service.hos.DrugCateService;
-import cn.jinzhu.cli.medicine.service.hos.DrugInformationService;
+import cn.bdqn.his.common.response.Response;
+import cn.bdqn.his.common.response.ResponseEnum;
+import cn.bdqn.his.medicine.entity.DrugInformation;
+import cn.bdqn.his.medicine.entity.PrescriType;
+import cn.bdqn.his.medicine.service.DrugInformationService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -35,7 +33,7 @@ public class DrugInformationController {
             @ApiImplicitParam(value = "药品名称和拼音",name = "commonName",defaultValue = "消炎药"),
             @ApiImplicitParam(name = "drugId", value = "药品分类id", required = true, defaultValue = "0"),
     })
-    public Response getDrugInformationByPrescriTypeId(Integer pageNum, Integer pageSize, PrescriType prescriType,String commonName,String pinyin,Integer drugId){
+    public Response getDrugInformationByPrescriTypeId(Integer pageNum, Integer pageSize, PrescriType prescriType, String commonName, String pinyin, Integer drugId){
         PageHelper.startPage(pageNum,pageSize);
         List<DrugInformation> list=drugInformationService.getDrugInformationByPrescriTypeId(prescriType,commonName,pinyin,drugId);
         PageInfo<DrugInformation> pageInfo = new PageInfo<>(list);

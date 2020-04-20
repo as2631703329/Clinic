@@ -1,9 +1,9 @@
-package cn.jinzhu.cli.prescription.entity.med;
+package cn.bdqn.his.prescription.entity.med;
 
 
-import cn.jinzhu.cli.medicine.entity.hos.DrugInformation;
-import cn.jinzhu.cli.medicine.entity.hos.DrugUsage;
-import cn.jinzhu.cli.prescription.entity.newl.NewDiag;
+import cn.bdqn.his.medicine.entity.DrugInformation;
+import cn.bdqn.his.medicine.entity.DrugUsage;
+import cn.bdqn.his.prescription.entity.newl.NewDiag;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

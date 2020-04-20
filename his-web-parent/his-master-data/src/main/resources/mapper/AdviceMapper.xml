@@ -1,14 +1,27 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.his.masterdata.mapper.AdviceMapper">
 
-<taglib xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-        version="2.1">
+    <resultMap id="adviceListMap" type="cn.bdqn.his.masterdata.entity.Advice">
+        <id property="id" column="id"></id>
+        <result property="content" column="content"></result>
+        <collection property="user" ofType="cn.bdqn.his.masterdata.entity.User" javaType="User">
+            <id property="id" column="id"></id>
+            <result property="name" column="name"></result>
+        </collection>
+    </resultMap>
 
-    <tlib-version>1.0</tlib-version>
-    <short-name>myshortname</short-name>
-    <uri>http://mycompany.com</uri>
+    <!--查询医嘱-->
+    <select id="adviceList" resultMap="adviceListMap">
+        SELECT ha.id,ha.content,ha.createDate,hu.`name` FROM `hos_advice` ha
+        LEFT JOIN `hos_user` hu ON hu.`id`=ha.create_id
+        <where>
+            <if test="content != null and content != ''">and `content` like concat('%',#{content},'%')</if>
+        </where>
+    </select>
 
-    <!-- Invoke 'Generate' action to add tags or functions -->
-
-</taglib>
+    <insert id="insertAdvice">
+        INSERT INTO `hos_advice`(`content`,`createDate`,`create_id`)
+        VALUE(#{content},#{createDate},#{create_id})
+    </insert>
+</mapper>

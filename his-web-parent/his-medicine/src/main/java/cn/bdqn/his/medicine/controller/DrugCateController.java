@@ -1,21 +1,30 @@
-package cn.jinzhu.cli.medicine.controller.hos;
+package cn.bdqn.his.medicine.controller;
 
-import cn.jinzhu.cli.common.response.Response;
-import cn.jinzhu.cli.common.response.ResponseEnum;
-import cn.jinzhu.cli.medicine.entity.hos.DrugCate;
-import cn.jinzhu.cli.medicine.entity.hos.PrescriType;
-import cn.jinzhu.cli.medicine.service.hos.DrugCateService;
+import cn.bdqn.his.common.response.Response;
+import cn.bdqn.his.common.response.ResponseEnum;
+import cn.bdqn.his.medicine.entity.DrugCate;
+import cn.bdqn.his.medicine.entity.PrescriType;
+import cn.bdqn.his.medicine.service.DrugCateService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.HttpClientUtils;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Api(tags = "药品分类表hos_drug_cate")
@@ -37,5 +46,9 @@ public class DrugCateController {
         PageInfo<DrugCate> pageInfo = new PageInfo<>(list);
         return new Response(ResponseEnum.SUCCESS).setResponseBody(pageInfo);
     }
+
+
+
+
 
 }

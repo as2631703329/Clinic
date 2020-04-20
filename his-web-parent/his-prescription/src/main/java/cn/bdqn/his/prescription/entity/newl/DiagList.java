@@ -1,4 +1,4 @@
-package cn.jinzhu.cli.prescription.entity.newl;
+package cn.bdqn.his.prescription.entity.newl;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

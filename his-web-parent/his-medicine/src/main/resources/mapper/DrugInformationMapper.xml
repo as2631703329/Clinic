@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.jinzhu.cli.medicine.mapper.hos.DrugInformationMapper">
-    <resultMap id="MapDrugInformationByPrescriTypeId" type="cn.jinzhu.cli.medicine.entity.hos.PrescriType">
+<mapper namespace="cn.bdqn.his.medicine.mapper.DrugInformationMapper">
+    <resultMap id="MapDrugInformationByPrescriTypeId" type="cn.bdqn.his.medicine.entity.PrescriType">
         <id property="id" column="id"></id>
         <result property="typeName" column="typeName"></result>
         <result property="createDate" column="createDate"></result>
-        <collection property="drugCate" ofType="cn.jinzhu.cli.medicine.entity.hos.DrugCate" javaType="java.util.List">
+        <collection property="drugCate" ofType="cn.bdqn.his.medicine.entity.DrugCate" javaType="java.util.List">
             <id property="id" column="drugId"></id>
             <result property="cateName" column="cateName"></result>
-        <collection property="drugInformation" ofType="cn.jinzhu.cli.medicine.entity.hos.DrugInformation" javaType="java.util.List">
+        <collection property="drugInformation" ofType="cn.bdqn.his.medicine.entity.DrugInformation" javaType="java.util.List">
                 <id property="id" column="drid"></id>
                 <result property="commonName" column="commonName"></result>
                 <result property="sellPrice" column="sellPrice"></result>
@@ -19,7 +19,7 @@
                 <result property="total" column="total"></result>
                 <result property="frequency" column="frequency"></result>
             <result property="pinyin" column="pinyin"></result>
-               <association property="usage" javaType="cn.jinzhu.cli.medicine.entity.hos.DrugUsage" >
+               <association property="usage" javaType="cn.bdqn.his.medicine.entity.DrugUsage" >
                     <result property="id" column="usageId"></result>
                 </association>
             </collection>

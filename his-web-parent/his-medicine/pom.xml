@@ -9,4 +9,11 @@
 	</parent>
 	<artifactId>his-medicine</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>cn.bdqn.his</groupId>
+			<artifactId>his-master-data</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

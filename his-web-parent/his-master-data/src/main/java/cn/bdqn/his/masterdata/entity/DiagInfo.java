@@ -1,4 +1,4 @@
-package cn.jinzhu.cli.masterdata.entity.hos;
+package cn.bdqn.his.masterdata.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;

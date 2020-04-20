@@ -1,8 +1,8 @@
-package cn.jinzhu.cli.prescription.entity.hos;
+package cn.bdqn.his.prescription.entity.hos;
 
-import cn.jinzhu.cli.masterdata.entity.hos.User;
-import cn.jinzhu.cli.prescription.entity.med.MenEast;
-import cn.jinzhu.cli.prescription.entity.med.MenWestern;
+import cn.bdqn.his.masterdata.entity.User;
+import cn.bdqn.his.prescription.entity.med.MenEast;
+import cn.bdqn.his.prescription.entity.med.MenWestern;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

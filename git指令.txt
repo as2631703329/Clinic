@@ -2,3 +2,5 @@ git clone [url] 克隆
 git branch [分支名称] 创建分支
 git branch -d [分支名称] 删除分支
 git checkout [分支名称] 切换分支
+
+git merge [分支名称] 合并分支

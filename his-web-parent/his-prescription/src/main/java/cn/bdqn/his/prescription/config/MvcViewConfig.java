@@ -8,15 +8,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import cn.bdqn.his.common.interceptor.SsoCookieWrapperInterceptor;
 
 @Configuration
-public class MvcConfig implements WebMvcConfigurer {
+public class MvcViewConfig implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addRedirectViewController("","index.html");
+		registry.addViewController("/add").setViewName("/add");
 	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new SsoCookieWrapperInterceptor())
-		.addPathPatterns("/api/**");
+				.addPathPatterns("/api/**");
 	}
 }

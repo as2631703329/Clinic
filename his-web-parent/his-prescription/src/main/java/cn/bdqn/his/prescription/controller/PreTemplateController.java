@@ -1,13 +1,7 @@
-package cn.jinzhu.cli.prescription.controller.hos;
+package cn.bdqn.his.prescription.controller;
 
-import cn.jinzhu.cli.common.response.RespBean;
-import cn.jinzhu.cli.common.response.Response;
-import cn.jinzhu.cli.common.response.ResponseEnum;
-import cn.jinzhu.cli.medicine.entity.hos.DrugCate;
-import cn.jinzhu.cli.medicine.entity.hos.PrescriType;
-import cn.jinzhu.cli.medicine.service.hos.DrugCateService;
-import cn.jinzhu.cli.prescription.entity.hos.PreTemplate;
-import cn.jinzhu.cli.prescription.service.hos.PreTemplateService;
+import cn.bdqn.his.prescription.entity.hos.PreTemplate;
+import cn.bdqn.his.prescription.service.PreTemplateService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -25,12 +19,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Api(tags = "摸板表hos_pre_template")
+@Api(tags = "处方表hos_pre_template")
 @RestController
 @RequestMapping("/api/prescription/hos/pre")
 public class PreTemplateController {
     @Autowired
-    PreTemplateService preTemplateService;//摸板表service
+    PreTemplateService preTemplateService;//处方
+
     @ApiOperation(value = "查询不同处方id查询摸板及摸板下的详情",notes = "查询所有药品类型")
     @GetMapping("/templat")
     @ApiImplicitParams({
