@@ -66,15 +66,15 @@ public class HttpClientHelper {
 			String result = null;
 			if(httpEntity != null) {
 				result = EntityUtils.toString(httpEntity);
-				if(log.isDebugEnabled()) {
+				/*if(log.isDebugEnabled()) {
 					log.debug("响应内容：{}",result);
-				}
+				}*/
 				if(response.getStatusLine().getStatusCode() == 200) {
 					return objectMapper.readValue(result,Response.class);
 				}
 			}
 		} catch(Exception ex) {
-			log.error(ex.getMessage(),ex);
+			/*log.error(ex.getMessage(),ex);*/
 		} finally {
 			HttpClientUtils.closeQuietly(httpClient);
 			HttpClientUtils.closeQuietly(response);

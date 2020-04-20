@@ -54,7 +54,6 @@ public class PrescriptionController {
         if(!StringUtils.isEmpty(name)) {
             buffer.append("&name=").append(URLEncoder.encode(name, "UTF-8"));
         }
-        log.debug("params:{}", buffer);
         return httpClientHelper.getForResponse(serverMedicineUrl + "/api/medicines/findBy"+ buffer);
     }
     
@@ -67,7 +66,6 @@ public class PrescriptionController {
         params.put("pageSize", pageSize);
         params.put("typeId", typeId);
         params.put("name", name);
-        log.debug("params:{}", params);
         return httpClientHelper.postForResponse(serverMedicineUrl + "/api/medicines/findBy", params);
     }
 }
